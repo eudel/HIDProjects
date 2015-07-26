@@ -20,7 +20,7 @@ import at.hid.hidprojects.HIDProjects;
  * @author dunkler_engel
  *
  */
-public class Project implements Screen {
+public class Calendar implements Screen {
 
 	private Stage stage;
 	private TextureAtlas atlas;
@@ -65,21 +65,21 @@ public class Project implements Screen {
 		// creating tabs
 		HIDProjects.debug(this.getClass().toString(), "creating tabs");
 		btnTabCalendar = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnCalendar.text"), skin, "tab");
-		btnTabCalendar.addListener(new ClickListener() {
-			@Override
-			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Calendar());
-			}
-		});
+		btnTabCalendar.setDisabled(true);
 		
 		btnTabProject = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabProject.text"), skin, "tab");
-		btnTabProject.setDisabled(true);
+		btnTabProject.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				
+			}
+		});
 
 		btnTabStatistic = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabStatistic.text"), skin, "tab");
 		btnTabStatistic.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
+				
 			}
 		});
 
@@ -87,7 +87,7 @@ public class Project implements Screen {
 		btnTabTodo.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Todo());
+				
 			}
 		});
 
@@ -95,7 +95,7 @@ public class Project implements Screen {
 		btnTabNotes.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Notes());
+				
 			}
 		});
 		
@@ -103,7 +103,7 @@ public class Project implements Screen {
 		btnTabTimecard.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Timecard());
+				
 			}
 		});
 		
@@ -115,7 +115,7 @@ public class Project implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				HIDProjects.debug(this.getClass().toString(), "switching to MainMenu screen");
 				dispose();
-				((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+				((Game) Gdx.app.getApplicationListener()).setScreen(new Calendar());
 			}
 		});
 		btnHome.pad(10);

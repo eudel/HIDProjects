@@ -7,7 +7,6 @@ import org.json.JSONObject;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -192,20 +191,6 @@ public class Register implements Screen {
 		HIDProjects.profile.setSelectedUser(user);
 		HIDProjects.profile.setClientToken(HIDProjects.app42.userGetSessionId());
 		HIDProjects.profile.setDisplayName(displayName);
-
-		FileHandle fhprofile = null;
-		if (HIDProjects.EXT) {
-			fhprofile = Gdx.files.external(HIDProjects.PATH + "/profile.dat");
-		} else {
-			fhprofile = Gdx.files.local(HIDProjects.PATH + "/profile.dat");
-		}
-		if (fhprofile.exists()) {
-			try {
-				JSONObject profileJSON = new JSONObject(fhprofile.readString("UTF-8"));
-			} catch (Exception e) {
-				HIDProjects.error(this.getClass().toString(), "error reading authenticationDB", e);
-			}
-		}
 
 		HIDProjects.profile.saveProfile();
 	}

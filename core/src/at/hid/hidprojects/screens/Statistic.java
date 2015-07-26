@@ -20,7 +20,7 @@ import at.hid.hidprojects.HIDProjects;
  * @author dunkler_engel
  *
  */
-public class Project implements Screen {
+public class Statistic implements Screen {
 
 	private Stage stage;
 	private TextureAtlas atlas;
@@ -68,26 +68,26 @@ public class Project implements Screen {
 		btnTabCalendar.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Calendar());
+				
 			}
 		});
 		
 		btnTabProject = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabProject.text"), skin, "tab");
-		btnTabProject.setDisabled(true);
-
-		btnTabStatistic = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabStatistic.text"), skin, "tab");
-		btnTabStatistic.addListener(new ClickListener() {
+		btnTabProject.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
+				
 			}
 		});
+
+		btnTabStatistic = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabStatistic.text"), skin, "tab");
+		btnTabStatistic.setDisabled(true);
 
 		btnTabTodo = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabTodo.text"), skin, "tab");
 		btnTabTodo.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Todo());
+				
 			}
 		});
 
@@ -95,7 +95,7 @@ public class Project implements Screen {
 		btnTabNotes.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Notes());
+				
 			}
 		});
 		
@@ -103,7 +103,7 @@ public class Project implements Screen {
 		btnTabTimecard.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Timecard());
+				
 			}
 		});
 		
@@ -115,11 +115,11 @@ public class Project implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				HIDProjects.debug(this.getClass().toString(), "switching to MainMenu screen");
 				dispose();
-				((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+				((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
 			}
 		});
 		btnHome.pad(10);
-		
+
 		btnOptions = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnOptions.text"), skin);
 		btnOptions.addListener(new ClickListener() {
 			@Override
