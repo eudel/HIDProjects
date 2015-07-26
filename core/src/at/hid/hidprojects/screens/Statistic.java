@@ -64,7 +64,7 @@ public class Statistic implements Screen {
 
 		// creating tabs
 		HIDProjects.debug(this.getClass().toString(), "creating tabs");
-		btnTabCalendar = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnCalendar.text"), skin, "tab");
+		btnTabCalendar = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabCalendar.text"), skin, "tab");
 		btnTabCalendar.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -99,7 +99,7 @@ public class Statistic implements Screen {
 			}
 		});
 		
-		btnTabTimecard = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTimecard.text"), skin, "tab");
+		btnTabTimecard = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabTimecard.text"), skin, "tab");
 		btnTabTimecard.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -115,7 +115,7 @@ public class Statistic implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				HIDProjects.debug(this.getClass().toString(), "switching to MainMenu screen");
 				dispose();
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
+				((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
 			}
 		});
 		btnHome.pad(10);

@@ -34,26 +34,23 @@ public class MainMenu implements Screen {
 	@Override
 	public void show() {
 		HIDProjects.debug(this.getClass().toString(), "creating MainMenu screen");
-		switch (Gdx.app.getPreferences(HIDProjects.TITLE).getString("defaultModule", "Project")) {
-			case "Calendar":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Calendar());
-				break;
-			case "Project":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Project());
-				break;
-			case "Statistic":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
-				break;
-			case "Todo":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Todo());
-				break;
-			case "Notes":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Notes());
-				break;
-			case "Timecard":
-				((Game) Gdx.app.getApplicationListener()).setScreen(new Timecard());
-				break;
-		}
+		stage = new Stage(new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
+
+//		Gdx.input.setInputProcessor(stage);
+
+		String defaultModule = Gdx.app.getPreferences(HIDProjects.TITLE).getString("defaultModule", HIDProjects.getLangBundle().format("Options.selDefaultModule.text1")); 
+		if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text2")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Calendar());
+		else if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text1")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Project());
+		else if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text3")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Statistic());
+		else if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text4")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Todo());
+		else if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text5")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Notes());
+		else if (defaultModule.equals(HIDProjects.getLangBundle().format("Options.selDefaultModule.text6")))
+			((Game) Gdx.app.getApplicationListener()).setScreen(new Timecard());
 	}
 
 	@Override

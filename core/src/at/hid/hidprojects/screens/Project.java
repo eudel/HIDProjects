@@ -64,7 +64,7 @@ public class Project implements Screen {
 
 		// creating tabs
 		HIDProjects.debug(this.getClass().toString(), "creating tabs");
-		btnTabCalendar = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnCalendar.text"), skin, "tab");
+		btnTabCalendar = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabCalendar.text"), skin, "tab");
 		btnTabCalendar.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -99,7 +99,7 @@ public class Project implements Screen {
 			}
 		});
 		
-		btnTabTimecard = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTimecard.text"), skin, "tab");
+		btnTabTimecard = new TextButton(HIDProjects.getLangBundle().format("MainMenu.btnTabTimecard.text"), skin, "tab");
 		btnTabTimecard.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
