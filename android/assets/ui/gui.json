@@ -38,6 +38,12 @@
 		"black32": {
 			"file": "font/black32.fnt"
 		},
+		"white24": {
+			"file": "font/white24.fnt"
+		},
+		"black24": {
+			"file": "font/black24.fnt"
+		},
 		"white16": {
 			"file": "font/white16.fnt"
 		},
@@ -47,6 +53,10 @@
 	},
 	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
 		"default": {
+			"font": "white24",
+			"fontColor": "white"
+		},
+		"title": {
 			"font": "white32",
 			"fontColor": "white"
 		}
@@ -90,6 +100,14 @@
 	},
 	"com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
 		"default": {
+			"font": "black24",
+			"fontColor": "black",
+			"cursor": "textfield.cursor",
+			"selection": "default.selection",
+			"background": "textfield.background",
+			"disabledBackground": "textfield.disabled"
+		},
+		"big": {
 			"font": "black32",
 			"fontColor": "black",
 			"cursor": "textfield.cursor",
@@ -144,6 +162,14 @@
 		"ap-horizontal": {
 			"background": "progressbar.background",
 			"knobBefore": "progressbar.ap.knobBefore"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Tree$TreeStyle": {
+		"default": {
+			"minus": "minus.hor.up",
+			"over": "default.selection",
+			"plus": "plus.hor.up",
+			"selection": "default.selection"
 		}
 	}
 }

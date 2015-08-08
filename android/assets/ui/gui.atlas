@@ -1,11 +1,11 @@
 
-atlas.png
+gui.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 button.down
   rotate: false
-  xy: 1, 75
+  xy: 1, 79
   size: 145, 48
   split: 17, 18, 23, 24
   orig: 145, 48
@@ -13,7 +13,7 @@ button.down
   index: -1
 button.hover
   rotate: false
-  xy: 1, 25
+  xy: 1, 29
   size: 145, 48
   split: 17, 18, 23, 24
   orig: 145, 48
@@ -21,7 +21,7 @@ button.hover
   index: -1
 button.inactive
   rotate: false
-  xy: 148, 75
+  xy: 148, 79
   size: 145, 48
   split: 18, 17, 23, 24
   orig: 145, 48
@@ -29,7 +29,7 @@ button.inactive
   index: -1
 button.up
   rotate: false
-  xy: 148, 25
+  xy: 148, 29
   size: 145, 48
   split: 17, 18, 23, 24
   orig: 145, 48
@@ -37,7 +37,7 @@ button.up
   index: -1
 tab.down
   rotate: false
-  xy: 295, 77
+  xy: 295, 81
   size: 142, 46
   split: 19, 18, 0, 46
   orig: 142, 46
@@ -45,14 +45,14 @@ tab.down
   index: -1
 tab.up
   rotate: false
-  xy: 295, 29
+  xy: 295, 33
   size: 142, 46
   orig: 142, 46
   offset: 0, 0
   index: -1
 textfield.background
   rotate: false
-  xy: 439, 83
+  xy: 439, 87
   size: 128, 40
   split: 6, 5, 6, 5
   orig: 128, 40
@@ -60,7 +60,7 @@ textfield.background
   index: -1
 selectbox.down
   rotate: false
-  xy: 439, 43
+  xy: 439, 47
   size: 126, 38
   split: 5, 21, 0, 38
   orig: 126, 38
@@ -68,7 +68,7 @@ selectbox.down
   index: -1
 selectbox.up
   rotate: false
-  xy: 569, 85
+  xy: 569, 89
   size: 126, 38
   split: 5, 21, 0, 38
   orig: 126, 38
@@ -76,7 +76,7 @@ selectbox.up
   index: -1
 textfield.disabled
   rotate: false
-  xy: 697, 85
+  xy: 697, 89
   size: 126, 38
   split: 5, 4, 0, 38
   orig: 126, 38
@@ -84,7 +84,7 @@ textfield.disabled
   index: -1
 progressbar.ap.knobBefore
   rotate: false
-  xy: 1, 1
+  xy: 1, 5
   size: 70, 22
   split: 5, 0, 0, 22
   orig: 70, 22
@@ -92,15 +92,15 @@ progressbar.ap.knobBefore
   index: -1
 progressbar.background
   rotate: false
-  xy: 825, 101
+  xy: 825, 105
   size: 70, 22
-  split: 5, 0, 5, 4
+  split: 0, 0, 5, 4
   orig: 70, 22
   offset: 0, 0
   index: -1
 progressbar.hp.knobBefore
   rotate: false
-  xy: 73, 1
+  xy: 73, 5
   size: 70, 22
   split: 5, 0, 0, 22
   orig: 70, 22
@@ -108,7 +108,7 @@ progressbar.hp.knobBefore
   index: -1
 progressbar.knobBefore
   rotate: false
-  xy: 897, 101
+  xy: 897, 105
   size: 70, 22
   split: 5, 0, 0, 22
   orig: 70, 22
@@ -116,7 +116,7 @@ progressbar.knobBefore
   index: -1
 progressbar.mp.knobBefore
   rotate: false
-  xy: 145, 1
+  xy: 145, 5
   size: 70, 22
   split: 5, 0, 0, 22
   orig: 70, 22
@@ -124,28 +124,28 @@ progressbar.mp.knobBefore
   index: -1
 button.lang
   rotate: false
-  xy: 969, 91
+  xy: 969, 95
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 checkbox.off
   rotate: false
-  xy: 825, 67
+  xy: 825, 71
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 checkbox.on
   rotate: false
-  xy: 859, 67
+  xy: 859, 71
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 scrollpane.background
   rotate: false
-  xy: 893, 67
+  xy: 893, 71
   size: 32, 32
   split: 11, 9, 9, 9
   orig: 32, 32
@@ -153,42 +153,189 @@ scrollpane.background
   index: -1
 scrollpane.hScrollKnob
   rotate: false
-  xy: 927, 67
+  xy: 927, 71
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 scrollpane.vScrollKnob
   rotate: false
-  xy: 961, 57
+  xy: 961, 61
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
+minus.hor.down
+  rotate: false
+  xy: 217, 11
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+minus.hor.up
+  rotate: false
+  xy: 217, 11
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+minus.hor.hover
+  rotate: false
+  xy: 240, 11
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+minus.hor.inactive
+  rotate: false
+  xy: 263, 11
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+minus.vert.down
+  rotate: false
+  xy: 1003, 106
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+minus.vert.up
+  rotate: false
+  xy: 1003, 106
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+plus.hor.down
+  rotate: false
+  xy: 439, 29
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+plus.hor.up
+  rotate: false
+  xy: 439, 29
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+plus.hor.hover
+  rotate: false
+  xy: 462, 29
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+plus.hor.inactive
+  rotate: false
+  xy: 485, 29
+  size: 21, 16
+  orig: 21, 16
+  offset: 0, 0
+  index: -1
+minus.vert.hover
+  rotate: false
+  xy: 508, 24
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+minus.vert.inactive
+  rotate: false
+  xy: 526, 24
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+plus.vert.down
+  rotate: false
+  xy: 544, 24
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+plus.vert.up
+  rotate: false
+  xy: 544, 24
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+plus.vert.hover
+  rotate: false
+  xy: 995, 72
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+slider.knob.vertical
+  rotate: false
+  xy: 1003, 95
+  size: 18, 9
+  orig: 18, 9
+  offset: 0, 0
+  index: -1
+plus.vert.inactive
+  rotate: false
+  xy: 286, 1
+  size: 16, 21
+  orig: 16, 21
+  offset: 0, 0
+  index: -1
+slider.knob
+  rotate: false
+  xy: 1013, 75
+  size: 9, 18
+  orig: 9, 18
+  offset: 0, 0
+  index: -1
 scrollpane.hScroll
   rotate: false
-  xy: 217, 7
+  xy: 995, 54
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 scrollpane.vScroll
   rotate: false
-  xy: 1003, 107
+  xy: 304, 15
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
+slider
+  rotate: false
+  xy: 217, 1
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
 textfield.cursor
   rotate: false
-  xy: 995, 73
+  xy: 1013, 57
   size: 4, 16
   orig: 4, 16
   offset: 0, 0
   index: -1
+splitpane
+  rotate: false
+  xy: 286, 24
+  size: 5, 3
+  orig: 5, 3
+  offset: 0, 0
+  index: -1
+splitpane.vertical
+  rotate: false
+  xy: 961, 98
+  size: 3, 5
+  orig: 3, 5
+  offset: 0, 0
+  index: -1
 default.selection
   rotate: false
-  xy: 295, 26
+  xy: 961, 95
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
