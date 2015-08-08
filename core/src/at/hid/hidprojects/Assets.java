@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class Assets {
 	public static void load() {
-		HIDProjects.assets.load("ui/atlas.json", Skin.class);
+		HIDProjects.assets.load("ui/gui.json", Skin.class);
 	}
 	
 	public static void playSound(Sound sound) {
