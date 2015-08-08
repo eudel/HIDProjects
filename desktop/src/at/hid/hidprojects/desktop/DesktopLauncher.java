@@ -23,27 +23,27 @@ public class DesktopLauncher {
 		
 		int scale = 0;
 		if (screenResolution.width >= 1920 && screenResolution.height >= 1080) {
-			config.width = 1920;
+			config.width = 1902;
 			config.height = 1000;
 			scale = 6;
 		} else if (screenResolution.width >= 1600 && screenResolution.height >= 900) {
-			config.width = 1600;
+			config.width = 1585;
 			config.height = 833;
 			scale = 5;
 		} else if (screenResolution.width >= 1280 && screenResolution.height >= 720) {
-			config.width = 1280;
+			config.width = 1268;
 			config.height = 667;
 			scale = 4;
 		} else if (screenResolution.width >= 960 && screenResolution.height >= 540) {
-			config.width = 960;
+			config.width = 951;
 			config.height = 500;
 			scale = 3;
 		} else if (screenResolution.width >= 640 && screenResolution.height >= 360) {
-			config.width = 640;
+			config.width = 634;
 			config.height = 333;
 			scale = 2;
 		} else {
-			config.width = 320;
+			config.width = 317;
 			config.height = 167;
 			scale = 1;
 		}

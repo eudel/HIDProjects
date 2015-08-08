@@ -69,8 +69,8 @@ public class Register implements Screen {
 
 		// creating skin
 		HIDProjects.debug(this.getClass().toString(), "creating skin");
-		atlas = new TextureAtlas("ui/atlas.atlas");
-		skin = new Skin(Gdx.files.internal("ui/atlas.json"), atlas);
+		atlas = new TextureAtlas("ui/gui.atlas");
+		skin = new Skin(Gdx.files.internal("ui/gui.json"), atlas);
 
 		table = new Table(skin);
 		table.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -180,7 +180,6 @@ public class Register implements Screen {
 			HIDProjects.error(this.getClass().toString(), "error creating JSONObject for user " + displayName, e);
 		}
 
-		HIDProjects.app42.setDbName(HIDProjects.TITLE);
 		HIDProjects.app42.userServiceAddJSONObject("companyList", jsonDoc);
 		HIDProjects.app42.createUser(user, pass, mail);
 		HIDProjects.app42.userServiceAuthenticate(user, pass);

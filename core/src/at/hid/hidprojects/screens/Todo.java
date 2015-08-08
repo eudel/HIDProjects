@@ -55,8 +55,8 @@ public class Todo implements Screen {
 
 		// creating skin
 		HIDProjects.debug(this.getClass().toString(), "creating skin");
-		atlas = new TextureAtlas("ui/atlas.atlas");
-		skin = new Skin(Gdx.files.internal("ui/atlas.json"), atlas);
+		atlas = new TextureAtlas("ui/gui.atlas");
+		skin = new Skin(Gdx.files.internal("ui/gui.json"), atlas);
 
 		table = new Table(skin);
 		table.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

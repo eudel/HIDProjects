@@ -1,5 +1,9 @@
 package at.hid.hidprojects.screens;
 
+import java.util.ArrayList;
+
+import org.json.JSONObject;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -64,8 +68,17 @@ public class Splash implements Screen {
 				}
 				
 				if ((HIDProjects.profile.getSelectedUser() != null) && (!HIDProjects.profile.getSelectedUser().equals(""))) {
+					HIDProjects.app42.userServiceSetQuery("companyList", "user", HIDProjects.profile.getSelectedUser());
 					HIDProjects.app42.getUser(HIDProjects.profile.getSelectedUser());
+					ArrayList<JSONObject> jsonDocList = HIDProjects.app42.userGetJsonDocList();
+					try {
+						HIDProjects.profile.setAdmin(jsonDocList.get(0).getInt("admin"));
+						HIDProjects.profile.setCompany(jsonDocList.get(0).getString("company"));
+					} catch (Exception e) {
+						HIDProjects.error(this.getClass().toString(), "error reading additional user data", e);
+					}
 					HIDProjects.app42.setSessionId(HIDProjects.profile.getClientToken());
+					
 					
 					HIDProjects.debug(this.getClass().toString(), "switching to MainMenu Screen");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());

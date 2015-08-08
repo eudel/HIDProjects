@@ -1,11 +1,12 @@
 package at.hid.hidprojects.screens;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+
+import org.json.JSONObject;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -18,7 +19,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import at.hid.hidprojects.HIDProjects;
@@ -70,8 +70,8 @@ public class Login implements Screen {
 
 		// creating skin
 		HIDProjects.debug(this.getClass().toString(), "creating skin");
-		atlas = new TextureAtlas("ui/atlas.atlas");
-		skin = new Skin(Gdx.files.internal("ui/atlas.json"), atlas);
+		atlas = new TextureAtlas("ui/gui.atlas");
+		skin = new Skin(Gdx.files.internal("ui/gui.json"), atlas);
 
 		table = new Table(skin);
 		table.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -162,35 +162,25 @@ public class Login implements Screen {
 	}
 
 	public boolean doLogin(String user, String pass) {
-		HashMap<String, String> otherMetaHeaders = new HashMap<String, String>();
-		otherMetaHeaders.put("emailAuth", "true");
-		otherMetaHeaders.put("userProfile", "true");
-		HIDProjects.app42.userServiceSetOtherMetaHeaders(otherMetaHeaders);
-
 		if (HIDProjects.inetConnection()) {
+			
 			if (HIDProjects.app42.userServiceAuthenticate(txtMail.getText(), txtPass.getText()) == false) {
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Register(txtMail.getText(), txtPass.getText()));
 				return false;
 			} else {
 				String uuid = HIDProjects.app42.userGetUserName();
 				if (!uuid.isEmpty()) {
+					HIDProjects.app42.userServiceSetQuery("companyList", "user", uuid);
 					HIDProjects.app42.getUser(uuid);
-					HIDProjects.profile.setSelectedUser(uuid);
-
-					Json json = new Json();
-					FileHandle fhProfile = null;
+					ArrayList<JSONObject> jsonDocList = HIDProjects.app42.userGetJsonDocList();
 					try {
-						if (HIDProjects.EXT) {
-							fhProfile = Gdx.files.external(HIDProjects.PATH + "/profile.dat");
-						} else {
-							fhProfile = Gdx.files.local(HIDProjects.PATH + "/profile.dat");
-						}
-						String profileAsText = json.prettyPrint(HIDProjects.profile);
-						fhProfile.writeString(profileAsText, false, "UTF-8");
+						HIDProjects.profile.setAdmin(jsonDocList.get(0).getInt("admin"));
+						HIDProjects.profile.setCompany(jsonDocList.get(0).getString("company"));
 					} catch (Exception e) {
-						HIDProjects.error(this.getClass().getName(), "error writing profile.dat file", e);
+						HIDProjects.error(this.getClass().toString(), "error reading additional user data", e);
 					}
-
+					HIDProjects.profile.setSelectedUser(uuid);
+					HIDProjects.profile.saveProfile();
 				}
 			}
 		} else {

@@ -80,7 +80,7 @@ public class HIDProjects extends Game {
 		}
 	}
 
-	public static void error(String tag, String message, Throwable t) {
+	public static void error(String tag, String message, Throwable e) {
 		FileHandle fhLog = null;
 		if (EXT) {
 			fhLog = Gdx.files.external(PATH + "/logs/latest.log");
@@ -89,9 +89,9 @@ public class HIDProjects extends Game {
 		}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss: ");
-		Gdx.app.error(tag, message, t);
+		Gdx.app.error(tag, message, e);
 		fhLog.writeString(sdf.format(date) + tag + ": ERROR: " + message + "\n", true, "UTF-8");
-		fhLog.writeString(t + "\n", true, "UTF-8");
+		fhLog.writeString(e + "\n", true, "UTF-8");
 	}
 	
 	public static void error(String tag, String message) {
@@ -154,6 +154,7 @@ public class HIDProjects extends Game {
 	@Override
 	public void create () {
 		EXT = Gdx.files.isExternalStorageAvailable();
+		app42.setDbName(TITLE);
 		app42.initialize("0b5477705bcffc713ee4739170cbea834e9747722638d93bd1544aa1649f03fb", "14ed304d09f0c918fe4a0006dfc23e46678358786d3db56e4dcc9acd64e896dd");
 		app42.buildUserService();
 		app42.buildStorageService();
